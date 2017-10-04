@@ -5,12 +5,36 @@
         <meta charset='utf-8'>
 
         <!--connects CSS stylesheets-->
-        <link rel='stylesheet' href='css/style.css'>
+        <link rel='stylesheet' href='css/reset.css'>
         <link rel='stylesheet' href='css/style.css'>
     </head>
     <body>
-        
-        <!--connects JavaScript file-->
+        <!--Main Navigation Bar-->
+        <header>
+            <nav>
+                <ul>
+                    <li id='navElement-1'>File</li>
+                    <li id='navElement-2'>Add</li>
+                </ul>
+            </nav>
+        </header>
+
+        <!--Drop Down Menus-->
+        <div class='dropdown'>
+            <ul>
+                <li>New File</li>
+                <li>Save File</li>
+            </ul>
+        </div>
+        <div class='dropdown'>
+            <ul>
+                <li>add icon</li>
+                <li>add comment</li>
+            </ul>
+        </div>
+
+        <!--connects JavaScript files-->
+        <script type='text/javascript' src='js/custom-library.js'></script>
         <script type='text/javascript' src='js/main.js'></script>
     </body>
 </html>
