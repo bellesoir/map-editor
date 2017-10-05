@@ -13,8 +13,8 @@
         <header>
             <nav>
                 <ul>
-                    <li id='navElement-1'>File</li>
-                    <li id='navElement-2'>Add</li>
+                    <li class='nav' id='navElement-1'>File</li>
+                    <li class= 'nav' id='navElement-2'>Add</li>
                 </ul>
             </nav>
         </header>
@@ -33,8 +33,60 @@
             </ul>
         </div>
 
+        <!--Map/Layer Navigation-->
+        <div id='nav-layer'>
+            <form>
+                <ul>
+                    <li class='map-tree'>
+                        <input type='radio' name='map' id='map-1'>
+                        <label>Map One</label>
+                        <ul>
+                            <li>
+                                <label>Layer 1</label>
+                                <input type='checkbox' name='layer'>
+                            </li>
+                            <li>
+                                <label>Layer 2</label>
+                                <input type='checkbox' name='layer'>
+                                <ul>
+                                    <li>
+                                        <label>Sublayer 1</label>
+                                        <input type='checkbox' name='layer'>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <label>Layer 3</label>
+                                <input type='checkbox' name='layer'>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class='map-tree'>
+                        <input type='radio' name='map' id='map-2'>
+                        <label>Map Two</label>
+                        <ul>
+                            <li>
+                                <label>Layer 1</label>
+                                <input type='checkbox' name='layer'>
+                            </li>
+                            <li>
+                                <label>Layer 2</label>
+                                <input type='checkbox' name='layer'>
+                            </li>
+                            <li>
+                                <label>Layer 3</label>
+                                <input type='checkbox' name='layer'>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </form>
+        </div>
+
+        <!--Map Container-->
+
         <!--connects JavaScript files-->
-        <script type='text/javascript' src='js/custom-library.js'></script>
+        <script type='text/javascript' src='js/jquery.js'></script>
         <script type='text/javascript' src='js/main.js'></script>
     </body>
 </html>

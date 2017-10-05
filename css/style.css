@@ -4,6 +4,8 @@
 
 /*Navigation Bar*/
 header {
+    position: absolute;
+    top: 0;
     width: 100%;
     background-color: lightGray;
 }
@@ -21,16 +23,47 @@ header li:hover {
 .dropdown {
     /*dropdowns are initially hidden*/
     display: none;
-    width: 100px;
-    background-color: blue;
+    position: absolute;
+    top: 26px;
+    z-index: 1;
+    background-color: lightGray;
+    border: 1px solid black;
 }
 
 .dropdown li {
     padding: 5px 20px;
 }
 
+/*Positions dropdowns under their 'button'*/
 .dropdown:nth-of-type(2) {
-    position: absolute;
-    top: 26px;
     left: 38.5px;
+}
+
+/*Accomodates for Navigation Bar*/
+body {
+    margin-top: 26px;
+}
+
+/*Layer Navigation SideBar*/
+
+#nav-layer {
+    width: 180px;
+    height: 300px;
+    padding: 10px 10px 10px 0px;
+    background-color: lightBlue;
+    border-right: 3px solid;
+    border-image: linear-gradient(black, lightBlue) 10;
+}
+
+#nav-layer ul {
+    margin-left: 10px;
+}
+
+.map-tree li {
+    margin-left: 20px;
+}
+
+li > ul {
+    height: 0;
+    overflow: hidden;
 }
