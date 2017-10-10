@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Map Editor - Your Home for Interactive, Editable Maps for Video Games</title>
+        <title>The Cartographer - Interactive Maps for Video Games</title>
         <meta charset='utf-8'>
 
-        <!--connects CSS stylesheets-->
+        <!--connects CSS stylesheets and JQuery-->
         <link rel='stylesheet' href='css/reset.css'>
+        <link href="https://fonts.googleapis.com/css?family=Homemade+Apple" rel="stylesheet">
         <link rel='stylesheet' href='css/style.css'>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     </head>
     <body>
-        <!--Main Navigation Bar-->
+        <!--Header and Main Navigation Bar-->
         <header>
+            <h1>The Cartographer</h1>
             <nav>
                 <ul>
                     <li class='nav' id='navElement-1'>File</li>
@@ -28,36 +32,43 @@
         </div>
         <div class='dropdown'>
             <ul>
-                <li>add icon</li>
+                <li id='add-marker'>add marker</li>
                 <li>add comment</li>
             </ul>
         </div>
 
         <!--Map/Layer Navigation-->
         <div id='nav-layer'>
+            <!-- **For interactivity**
+            <div id='marker-editor'>
+                <p>Title</p>
+                <button id='btn-set-marker'>Set Marker</button>
+            </div>
+            -->
+            <h2>Sly Cooper 4</h2>
             <form>
                 <ul>
                     <li class='map-tree'>
                         <input type='radio' name='map' id='map-1'>
-                        <label>Map One</label>
+                        <label>Turning Japanese</label>
                         <ul>
                             <li>
-                                <label>Layer 1</label>
-                                <input type='checkbox' name='layer'>
-                            </li>
-                            <li>
-                                <label>Layer 2</label>
-                                <input type='checkbox' name='layer'>
+                                <label>Bottles</label>
+                                <input type='checkbox' name='layer' id='bottles'>
                                 <ul>
                                     <li>
                                         <label>Sublayer 1</label>
-                                        <input type='checkbox' name='layer'>
+                                        <input type='checkbox' name='layer' id='bottles-upgrade'>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <label>Layer 3</label>
-                                <input type='checkbox' name='layer'>
+                                <label>Treasures</label>
+                                <input type='checkbox' name='layer' id='treasures'>
+                            </li>
+                            <li>
+                                <label>Masks</label>
+                                <input type='checkbox' name='layer' id='masks'>
                             </li>
                         </ul>
                     </li>
@@ -81,12 +92,58 @@
                     </li>
                 </ul>
             </form>
+            <div id='marker-assisstant'>
+                <p>Top: <span></span> Left: <span></span></p>
+            </div>
         </div>
 
         <!--Map Container-->
+        <div class='map-container' id='japan'>
+            <img src='images/sly-cooper-japan.jpg'>
+            <div class='marker' id='draggable'>
+            </div>
+
+            <!--Green Markers-->
+            <div class='is-green'>
+                <div class='marker'>
+                </div>
+                <div class='description'>
+                    <p>Location: ??</p>
+                    <p>Abitlity: none</p>
+                </div>
+            </div>
+            <div class='is-green need-upgrade'>
+                <div class='marker'>
+                </div>
+                <div class='description'>
+                    <p>Location: ??</p>
+                    <p>Abitlity: none</p>
+                </div>
+            </div>
+
+            <!--Blue Markers-->
+            <div class='is-blue'>
+                <div class='marker'>
+                </div>
+                <div class='description'>
+                    <p>Location: ??</p>
+                    <p>Abitlity: none</p>
+                </div>
+            </div>
+
+            <!--Yellow Markers-->
+            <div class='is-yellow'>
+                <div class='marker'>
+                </div>
+                <div class='description'>
+                    <p>Location: ??</p>
+                    <p>Abitlity: none</p>
+                </div>
+            </div>
+        </div><!--Closes Japan Map-->
 
         <!--connects JavaScript files-->
-        <script type='text/javascript' src='js/jquery.js'></script>
+        <!--<script type='text/javascript' src='js/jquery.js'></script>-->
         <script type='text/javascript' src='js/main.js'></script>
     </body>
 </html>

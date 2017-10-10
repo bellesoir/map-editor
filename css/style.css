@@ -1,13 +1,25 @@
+/*color palette: grn 58F33F ; SKYBLUE 2FF3FF ; PURPLE 4F32F4 ; VIOLET 8B1DB2 ; WINE 510D3D*/
+
 * {
     box-sizing: border-box;
 }
 
-/*Navigation Bar*/
+/*Header Section: h1 and Navigation Bar*/
 header {
     position: absolute;
     top: 0;
+    left: 0;
     width: 100%;
-    background-color: lightGray;
+    height: 72.5px;
+    color: #2FF3FF;
+    background-color: #000;
+}
+
+h1 {
+    height: 47px;
+    font: normal 30px 'Homemade Apple', cursive, times;
+    text-align: center;
+    overflow: visible;
 }
 
 header li {
@@ -15,8 +27,9 @@ header li {
     padding: 5px;
 }
 
-header li:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+/*Hover State for Navigation and Dropdown Menu Items*/
+header li:hover , .dropdown li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /*Dropdown Menus for Navigation Bar*/
@@ -24,10 +37,12 @@ header li:hover {
     /*dropdowns are initially hidden*/
     display: none;
     position: absolute;
-    top: 26px;
+    top: 72.5px;
+    left: 0;
     z-index: 1;
-    background-color: lightGray;
-    border: 1px solid black;
+    color: #2FF3FF;
+    background-color: #000;
+    border: 1px solid #AAA;
 }
 
 .dropdown li {
@@ -39,20 +54,32 @@ header li:hover {
     left: 38.5px;
 }
 
-/*Accomodates for Navigation Bar*/
+/*Accomodates for Navigation Bar and Layer Navigation Sidebar*/
 body {
-    margin-top: 26px;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 72.5px;
+    padding-left: 180px;
+    background-color: #000;
+    overflow: hidden;
 }
 
 /*Layer Navigation SideBar*/
-
 #nav-layer {
+    position: absolute;
+    top: 72.5px;
+    left: 0;
     width: 180px;
-    height: 300px;
+    height: 100%;
     padding: 10px 10px 10px 0px;
-    background-color: lightBlue;
+    background-color: #2FF3FF;
     border-right: 3px solid;
-    border-image: linear-gradient(black, lightBlue) 10;
+    border-image: linear-gradient(black, #2FF3FF) 1;
+}
+
+#nav-layer h2 {
+    padding-left: 15px;
+    font: normal 18px 'Homemade Apple', cursive, times;
 }
 
 #nav-layer ul {
@@ -64,6 +91,103 @@ body {
 }
 
 li > ul {
-    height: 0;
-    overflow: hidden;
+    display: none;
+}
+
+/*Marker-Editor Panel*/
+#marker-editor {
+    display: none;
+    border: 1px solid black;
+}
+
+#marker-assisstant {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    border: 1px solid black;
+    padding: 4px;
+    z-index: 1;
+}
+
+/*Map Container*/
+.map-container {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid white;
+    overflow: scroll;
+}
+
+.map-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/*Draggable Marker, assists with positioning markers*/
+#draggable {
+    top: 0px;
+    left: 0px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+/*Markers*/
+.marker {
+    position: absolute;
+    border-radius: 8px;
+    width: 8px;
+    height: 8px;
+}
+
+.is-green > .marker {
+    background-color: #1fd30e;
+    border: 2px solid #1fd30e;
+}
+
+.is-blue > .marker {
+    background-color: #031daf;
+    border: 2px solid #031daf;
+}
+
+.is-yellow > .marker {
+    background-color: #efdf02;
+    border: 2px solid #efdf02;
+}
+
+/*Marker Descriptions*/
+.description {
+    position: absolute;
+    top: 15px;
+    display: none;
+    padding: 5px;
+    border: 2px outset lightgray;
+    border-radius: 5px;
+    background-color: white;
+    z-index: 1;
+}
+
+/* Marker/Description Containers*/
+.is-green, .is-blue, .is-yellow {display: none; position: relative;}
+
+.is-green {
+    top: 300px;
+    left: 300px;
+}
+
+.is-blue {
+    top: 400px;
+    left: 300px;
+}
+
+.is-yellow {
+    top: 300px;
+    left: 350px;
+}
+
+.need-upgrade {
+    top: 500px;
+    left: 350px;
 }
